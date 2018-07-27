@@ -88,11 +88,11 @@
                     icon.style.background = "rgb(43, 203, 64)";
                     if (player.NumberOfVACBans) {
                         icon.style.background = "rgb(255, 73, 73)";
-                        iconfriend.querySelector('.selectable .indicator').innerHTML = "OW";
+                        iconfriend.querySelector('.selectable .indicator').innerHTML = "VAC";
                     }
                     if (player.NumberOfGameBans) {
                         icon.style.background = "rgb(255, 73, 73)";
-                        icon.innerHTML = "VAC";
+                        icon.innerHTML = "OW";
                     }
                 }else{
                     icon = document.createElement('div')
