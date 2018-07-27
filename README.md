@@ -1,7 +1,7 @@
 # How to install / use it
 1. Install Tampermonkey as Browser Addon (probably known as Greasemonkey)
 2. add new user script
-3. copy code in editor
+3. copy [code](https://raw.githubusercontent.com/MUedsa/VacBanChecker/master/VacBanChecker.js) in editor
 4. save
 
 # Credits
