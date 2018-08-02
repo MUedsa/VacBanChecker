@@ -6,7 +6,7 @@
 
 ![friend-example](https://raw.githubusercontent.com/MUedsa/VacBanChecker/master/friend-example.png)
 
-![group-example](https://raw.githubusercontent.com/MUedsa/VacBanChecker/blob/master/group-example.png)
+![group-example](https://github.com/MUedsa/VacBanChecker/blob/master/group-example.png?raw=true)
 
 # Credits
 
