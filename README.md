@@ -13,4 +13,4 @@
 
 forked from VitoHusky/VacBanChecker
 
-Credits go out to [iEyepawd](http://www.reddit.com/user/iEyepawd) from this [reddit post](http://www.reddit.com/r/GlobalOffensive/comments/348292/i_made_a_userscript_to_easily_show_vac_bans_on/). His idea inspired me to write a version that can be easily used as a bookmarklet.
+> Credits go out to [iEyepawd](http://www.reddit.com/user/iEyepawd) from this [reddit post](http://www.reddit.com/r/GlobalOffensive/comments/348292/i_made_a_userscript_to_easily_show_vac_bans_on/). His idea inspired me to write a version that can be easily used as a bookmarklet.
