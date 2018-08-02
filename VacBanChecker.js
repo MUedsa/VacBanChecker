@@ -1,5 +1,5 @@
 // ==UserScript== 
-// @version         1.2
+// @version         1.2.1
 // @name            VacChecker
 // @namespace       https://github.com/muedsa/VacBanChecker
 // @description  	Shows vac bans underneath players on steam(now support for new steam UI)
@@ -65,6 +65,7 @@
         var friendElements = lookup[player.SteamId];
 
         friendElements.forEach(function(friend) {
+            //friends
             if(document.querySelectorAll('#friends_list .friend_block_v2').length > 0){
                 friend.querySelector('.selectable .indicator').style.display = "block";
                 friend.querySelector('.selectable .indicator').innerHTML = "";
@@ -80,34 +81,35 @@
                 }
             }
             
-
+            //group
             if(document.querySelectorAll('#memberList .member_block').length > 0){
-                alert();
                 var icon = friend.querySelector('.rank_icon');
                 if(icon){
                     icon.style.background = "rgb(43, 203, 64)";
                     if (player.NumberOfVACBans) {
                         icon.style.background = "rgb(255, 73, 73)";
-                        iconfriend.querySelector('.selectable .indicator').innerHTML = "VAC";
+                        icon.innerHTML = "VAC";
                     }
                     if (player.NumberOfGameBans) {
                         icon.style.background = "rgb(255, 73, 73)";
                         icon.innerHTML = "OW";
                     }
                 }else{
-                    icon = document.createElement('div')
-                    icon.attributes('class', 'rank_icon');
-                    icon.attributes('class', 'rank_icon');
+                    icon = document.createElement('div');
+                    icon.setAttribute('class', 'rank_icon');
+                    icon.setAttribute('class', 'rank_icon');
                     icon.style.background = "rgb(43, 203, 64)";
                     if (player.NumberOfVACBans) {
                         icon.style.background = "rgb(255, 73, 73)";
-                        iconfriend.querySelector('.selectable .indicator').innerHTML = "OW";
+                        icon.innerHTML = "VAC";
                     }
                     if (player.NumberOfGameBans) {
                         icon.style.background = "rgb(255, 73, 73)";
-                        icon.innerHTML = "VAC";
+                        icon.innerHTML = "OW";
                     }
+                    friend.insertAdjacentElement('afterbegin', icon);
                 }
+                icon.style.width = '23.3px';
             }
         });
     }
@@ -130,26 +132,27 @@
         xmlHttp.send();
     }
 
-    var friends = [].slice.call(document.querySelectorAll('#friends_list .friend_block_v2, #memberList .member_block'));
+
+
+    var friends = [];
     var lookup = {};
-
-    //console.log(friends);
-
-    friends.forEach(function(friend) {
-        var id = getId(friend);
-        if (!lookup[id]) {
-            lookup[id] = [];
+    var timer = setInterval(function(){
+        if(friends.length > 0){
+            friends.forEach(function(friend) {
+                var id = getId(friend);
+                if (!lookup[id]) {
+                    lookup[id] = [];
+                }
+                lookup[id].push(friend);
+            });
+            var ids = Object.keys(lookup);
+            while (ids.length > 0) {
+                var batch = ids.splice(0, 100);
+                makeApiCall(batch);
+            }
+            clearInterval(timer);
+        }else{
+            friends = [].slice.call(document.querySelectorAll('#friends_list .friend_block_v2, #memberList .member_block'));
         }
-        lookup[id].push(friend);
-    });
-
-    var ids = Object.keys(lookup);
-
-
-    console.log(ids);
-
-    while (ids.length > 0) {
-        var batch = ids.splice(0, 100);
-        makeApiCall(batch);
-    }
+    }, 500);
 })();
