@@ -1,4 +1,4 @@
-# How to install / use it
+# How to install / use it (Support for new steam UI)
 1. Install Tampermonkey as Browser Addon (probably known as Greasemonkey)
 2. add new user script
 3. copy [code](https://raw.githubusercontent.com/MUedsa/VacBanChecker/master/VacBanChecker.js) in editor
