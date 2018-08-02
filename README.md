@@ -4,6 +4,10 @@
 3. copy [code](https://raw.githubusercontent.com/MUedsa/VacBanChecker/master/VacBanChecker.js) in editor
 4. save
 
+![friend-example](https://raw.githubusercontent.com/MUedsa/VacBanChecker/master/friend-example.png)
+
+![group-example](https://raw.githubusercontent.com/MUedsa/VacBanChecker/blob/master/group-example.png)
+
 # Credits
 
 forked from VitoHusky/VacBanChecker
