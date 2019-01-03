@@ -73,11 +73,11 @@
                 friend.querySelector('.selectable .indicator').style.color = "#FFFFFF";
                 if (player.NumberOfVACBans) {
                     friend.querySelector('.selectable .indicator').style.background = "rgb(255, 73, 73)";
-                    friend.querySelector('.selectable .indicator').innerHTML = "OW";
+                    friend.querySelector('.selectable .indicator').innerHTML = "VAC";
                 }
                 if (player.NumberOfGameBans) {
                     friend.querySelector('.selectable .indicator').style.background = "rgb(255, 73, 73)";
-                    friend.querySelector('.selectable .indicator').innerHTML = "VAC";
+                    friend.querySelector('.selectable .indicator').innerHTML = "OW";
                 }
             }
             
